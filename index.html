@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results summary card</title>
+    <style>
+      :root {
+        --light-red: 0, 100%, 67%;
+        --green-teal: 166, 100%, 37%;
+        --cobalt-blue: 234, 85%, 45%;
+        --orangey-yellow: 39, 100%, 56%;
+
+        --white: hsl(0, 0%, 100%);
+        --pale-blue: hsl(221, 100%, 96%);
+        --dark-gray-blue: hsl(224, 30%, 27%);
+        --light-lavender: hsl(241, 100%, 89%);
+
+        --card-bg: linear-gradient(
+          to bottom,
+          hsl(252, 100%, 67%),
+          hsl(241, 81%, 54%)
+        );
+        --circle-bg: linear-gradient(
+          to bottom,
+          hsla(256, 72%, 46%, 1),
+          hsla(241, 72%, 46%, 0)
+        );
+
+        --reaction-cl: var(--light-red);
+        --memory-cl: var(--orangey-yellow);
+        --verbal-cl: var(--green-teal);
+        --visual-cl: var(--cobalt-blue);
+      }
+
+      /* Simple Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Typography */
+      @supports (font-variation-settings: normal) {
+        @font-face {
+          font-family: "HankenGrotesk";
+          font-weight: 500 800;
+          src: url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+        }
+      }
+      @supports not (font-variation-settings: normal) {
+        @font-face {
+          font-family: "HankenGrotesk";
+          font-weight: 500;
+          src: url("./assets/fonts/static/HankenGrotesk-Medium.ttf");
+        }
+        @font-face {
+          font-family: "HankenGrotesk";
+          font-weight: 700;
+          src: url("./assets/fonts/static/HankenGrotesk-Bold.ttf");
+        }
+        @font-face {
+          font-family: "HankenGrotesk";
+          font-weight: 800;
+          src: url("./assets/fonts/static/HankenGrotesk-ExtraBold.ttf");
+        }
+      }
+
+      /* Utilities */
+      .sr-only {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+      }
+
+      /* Base */
+      body {
+        height: 100vh;
+        min-height: 600px;
+        background-color: var(--white);
+        font: 500 18px/1 "HankenGrotesk";
+        /* For Visualize */
+        display: grid;
+        place-items: center;
+      }
+      @media (max-width: 767px) {
+        body {
+          font-size: 16px;
+        }
+      }
+
+      /* Card */
+    </style>
+  </head>
+  <body>
+    <!-- For a11y -->
+    <header class="sr-only">
+      <h1>Results summary card</h1>
+    </header>
+
+    <!-- Card -->
+  </body>
+</html>
