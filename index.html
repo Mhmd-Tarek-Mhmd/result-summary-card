@@ -288,5 +288,34 @@
         </div>
       </article>
     </main>
+
+    <script>
+      (function () {
+        const container = document.querySelector(".card__summary__details");
+        const renderBox = ({ category, score, icon }) => {
+          container.innerHTML += `
+            <div
+              class="card__summary__details__box"
+              style="--box-cl: var(--${category.toLowerCase()}-cl)"
+            >
+              <div class="card__summary__details__box__title">
+                <img aria-hidden="true" src="${icon}" alt="" />
+                <strong>${category}</strong>
+              </div>
+              <div class="card__summary__details__box__result">
+                ${score}
+                <span class="card__summary__details__box__result__total">/ 100</span>
+              </div>
+            </div>
+          `;
+        };
+
+        fetch("./data.json")
+          .then((res) => res.json())
+          .then((data) => {
+            data.forEach(renderBox);
+          });
+      })();
+    </script>
   </body>
 </html>
